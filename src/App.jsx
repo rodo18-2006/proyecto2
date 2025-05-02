@@ -14,6 +14,7 @@ import Nuevopaciente from "./page/Nuevopaciente";
 import Nuevoturno from "./page/Nuevoturno";
 import TurnosPacientes from "./page/TurnosPacientes";
 import SobreNosotros from "./page/SobreNosotros";
+import Contacto from "./page/Contacto";
 
 const App = () => {
   return (
@@ -31,8 +32,9 @@ const App = () => {
           <Route path="/doctor/perfil" element={<PerfilDoctor />} />
           <Route path="/doctor/pacientes/nuevo" element={<Nuevopaciente />} />
           <Route path="/doctor/turnos/nuevo" element={<Nuevoturno />} />
-          <Route path="/turnos-pacientes" element={<TurnosPacientes/>} />
-          <Route path="/sobre-nosotros" element={<SobreNosotros />}/>
+          <Route path="/turnos-pacientes" element={<TurnosPacientes />} />
+          <Route path="/sobre-nosotros" element={<SobreNosotros />} />
+          <Route path="/contacto" element={<Contacto />} />
         </Routes>
       </Router>
     </div>

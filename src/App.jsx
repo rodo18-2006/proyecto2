@@ -10,6 +10,7 @@ import Error404 from "./page/error404/Error404";
 import Navbardoctores from "./page/Navbardoctores";
 import Paciente from "./page/Paciente";
 import PerfilDoctor from "./page/PerfilDoctor";
+import Nuevopaciente from "./page/Nuevopaciente";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/doctores" element={<Navbardoctores />} />
           <Route path="/doctor/pacientes" element={<Paciente />} />
           <Route path="/doctor/perfil" element={<PerfilDoctor />} />
+          <Route path="/doctor/pacientes/nuevo" element={<Nuevopaciente/>} />
         </Routes>
       </Router>
     </div>

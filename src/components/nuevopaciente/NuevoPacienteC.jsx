@@ -23,7 +23,7 @@ const NuevoPacienteC = () => {
       alert("Las contraseñas no coinciden");
       return;
     }
-    // Lógica para guardar el paciente...
+    
     alert("Paciente creado correctamente");
     navigate("/doctor/pacientes");
   };

@@ -91,6 +91,7 @@ const ConsultasC = () => {
                 <option>Control Visual</option>
                 <option>Fondo de Ojo</option>
                 <option>Presión Ocular</option>
+                <option>Tonometría</option>
               </Form.Select>
             </Form.Group>
 
@@ -118,8 +119,6 @@ const ConsultasC = () => {
           <h4 className="mt-4">Horarios</h4>
           <p>Lunes a Viernes: 9:00 a 19:00</p>
           <p>Sábados: 9:00 a 13:00</p>
-
-          
         </Col>
       </Row>
 

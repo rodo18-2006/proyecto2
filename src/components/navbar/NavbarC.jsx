@@ -25,7 +25,7 @@ const NavbarC = () => {
                 Atencion al cliente
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Turnos</NavDropdown.Item>
+              
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

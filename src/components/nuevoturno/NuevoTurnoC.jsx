@@ -16,7 +16,7 @@ const NuevoTurnoC = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Lógica para guardar el turno...
+   
     alert("Turno registrado correctamente");
     navigate("/doctor/turnos");
   };

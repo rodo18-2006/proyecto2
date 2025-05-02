@@ -15,6 +15,7 @@ import Nuevoturno from "./page/Nuevoturno";
 import TurnosPacientes from "./page/TurnosPacientes";
 import SobreNosotros from "./page/SobreNosotros";
 import Contacto from "./page/Contacto";
+import Doctores from "./page/Doctores";
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
           <Route path="/turnos-pacientes" element={<TurnosPacientes />} />
           <Route path="/sobre-nosotros" element={<SobreNosotros />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/doctor" element={<Doctores />}/>
         </Routes>
       </Router>
     </div>

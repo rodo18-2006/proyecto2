@@ -19,7 +19,7 @@ const NavbarC = () => {
             <Nav.Link href="/sobre-nosotros">Sobre nosotros</Nav.Link>
             <Nav.Link href="/contacto">Contacto</Nav.Link>
             <NavDropdown title="Doctores y mas" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/doctores">Doctores</NavDropdown.Item>
+              <NavDropdown.Item href="/doctor">Doctores</NavDropdown.Item>
               <NavDropdown.Item href="/horarios">Horarios</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">
                 Atencion al cliente

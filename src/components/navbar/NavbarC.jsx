@@ -12,15 +12,15 @@ const NavbarC = () => {
     <Navbar expand="lg" className="nav">
       <img className="logo" src="./img/favicon-clinica-ofmatologia.png" />
       <Container>
-        <Navbar.Brand href="#home">Inicio</Navbar.Brand>
+        <Navbar.Brand href="/inicio">Inicio</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Sobre nosotros</Nav.Link>
-            <Nav.Link href="#link">Contacto</Nav.Link>
+            <Nav.Link href="/sobre-nosotros">Sobre nosotros</Nav.Link>
+            <Nav.Link href="/contacto">Contacto</Nav.Link>
             <NavDropdown title="Doctores y mas" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Doctores</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Horarios</NavDropdown.Item>
+              <NavDropdown.Item href="/doctores">Doctores</NavDropdown.Item>
+              <NavDropdown.Item href="/horarios">Horarios</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">
                 Atencion al cliente
               </NavDropdown.Item>

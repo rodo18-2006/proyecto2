@@ -15,7 +15,7 @@ const FooterC = () => {
             <h5>Contacto</h5>
             <p>Email: contacto@visionary.com</p>
             <p>Tel: +54 11 1234 5678</p>
-            <p>Dirección: Av. Salud Visual 123, CABA</p>
+            <p>Dirección: Junín 851 , San Miguel de Tucumán</p>
           </Col>
           <Col md={4}>
             <h5>Redes Sociales</h5>

@@ -6,10 +6,10 @@ const PacientesC = () => {
   const pacientes = [
     { id: 1, nombre: "Juan Pérez", telefono: "381943572", turno: "10:00 AM" },
     { id: 2, nombre: "Ana García", telefono: "381238950", turno: "10:30 AM" },
-    { id: 2, nombre: "Emanuel Ramo", telefono: "381758923", turno: "11:00 AM" },
-    { id: 2, nombre: "Esteban Jose", telefono: "381251049", turno: "11:30 AM" },
-    { id: 2, nombre: "Pablo Ramirez", telefono: "381986754", turno: "12:00 AM" },
-    { id: 2, nombre: "Jose Suarez", telefono: "381302941", turno: "12:30 AM" },
+    { id: 3, nombre: "Emanuel Ramo", telefono: "381758923", turno: "11:00 AM" },
+    { id: 4, nombre: "Esteban Jose", telefono: "381251049", turno: "11:30 AM" },
+    { id: 5, nombre: "Pablo Ramirez", telefono: "381986754", turno: "12:00 AM" },
+    { id: 6, nombre: "Jose Suarez", telefono: "381302941", turno: "12:30 AM" },
   ];
 
   return (

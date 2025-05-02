@@ -17,6 +17,7 @@ import SobreNosotros from "./page/SobreNosotros";
 import Contacto from "./page/Contacto";
 import Doctores from "./page/Doctores";
 import Horarios from "./page/Horarios";
+import AtencionalCliente from "./page/AtencionalCliente";
 
 const App = () => {
   return (
@@ -38,7 +39,8 @@ const App = () => {
           <Route path="/sobre-nosotros" element={<SobreNosotros />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/doctor" element={<Doctores />} />
-          <Route path="/horarios" element={<Horarios />}/>
+          <Route path="/horarios" element={<Horarios />} />
+          <Route path="/atencion-al-cliente" element={<AtencionalCliente />} />
         </Routes>
       </Router>
     </div>

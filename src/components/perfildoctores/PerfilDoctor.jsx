@@ -13,7 +13,6 @@ const PerfilDoctorC = () => {
       <h4>Mi Perfil</h4>
       <Card>
         <Card.Body className="text-center">
-          {/* Imagen de perfil */}
           <Image
             src="https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2b8963/2b896323121d5cf8322d7c662583a893_large.jpg"
             roundedCircle

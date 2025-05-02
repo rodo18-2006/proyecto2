@@ -1,0 +1,30 @@
+/* NotFound.css */
+
+.notfound-container {
+  height: calc(100vh - 56px - 56px); /* altura de la ventana menos navbar y footer */
+  background-color: #e0f7fa;
+}
+
+.notfound-container .card {
+  max-width: 400px;
+  width: 100%;
+}
+
+.notfound-container .display-4 {
+  font-size: 5rem;
+  color: #007bff;
+}
+
+.notfound-container .text-primary {
+  color: #007bff !important;
+}
+
+.notfound-container .btn-info {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.notfound-container .btn-info:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}

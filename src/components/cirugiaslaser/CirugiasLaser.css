@@ -1,0 +1,28 @@
+h2, h4 {
+  color: #007bff;
+}
+
+.card-body {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+}
+
+.card-title {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+button {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}

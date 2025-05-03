@@ -29,7 +29,7 @@ const IniciodoctorC = () => {
                 <br />
                 {siguienteTurno.fecha} — {siguienteTurno.hora}
               </Card.Text>
-              <Button as={Link} to="/doctor/turnos" size="sm" variant="primary">
+              <Button as={Link} to="/doctor/pacientes" size="sm" variant="primary">
                 Ver todos
               </Button>
             </Card.Body>

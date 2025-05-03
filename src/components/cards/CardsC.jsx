@@ -54,6 +54,11 @@ const CardsC = () => (
         />
         <Card.Title>📅 Turnos Online</Card.Title>
         <Card.Text>Gestioná tu consulta desde casa fácil y rápido.</Card.Text>
+        <div className="text-center my-3">
+          <Button as={Link} to="/turnos-pacientes" variant="info">
+            Solicitar Turno
+          </Button>
+        </div>
       </Card.Body>
     </Card>
   </CardGroup>

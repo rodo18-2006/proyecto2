@@ -2,6 +2,7 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 import "./Estudios.css"
 
 const ControlesVisuales = () => {
@@ -19,7 +20,11 @@ const ControlesVisuales = () => {
             Medición precisa de la capacidad visual para detectar problemas de
             miopía, hipermetropía y astigmatismo.
           </Card.Text>
-          <Button variant="primary">Solicitar Turno</Button>
+          <div className="text-center my-3">
+            <Button as={Link} to="/turnos-pacientes" variant="info">
+              Solicitar Turno
+            </Button>
+          </div>
         </Card.Body>
       </Card>
 
@@ -35,7 +40,11 @@ const ControlesVisuales = () => {
             Examen que permite observar la retina, nervio óptico y vasos
             sanguíneos para prevenir enfermedades.
           </Card.Text>
-          <Button variant="primary">Solicitar Turno</Button>
+          <div className="text-center my-3">
+            <Button as={Link} to="/turnos-pacientes" variant="info">
+              Solicitar Turno
+            </Button>
+          </div>
         </Card.Body>
       </Card>
 
@@ -51,7 +60,11 @@ const ControlesVisuales = () => {
             Medición de la presión intraocular para detectar signos tempranos de
             glaucoma.
           </Card.Text>
-          <Button variant="primary">Solicitar Turno</Button>
+          <div className="text-center my-3">
+            <Button as={Link} to="/turnos-pacientes" variant="info">
+              Solicitar Turno
+            </Button>
+          </div>
         </Card.Body>
       </Card>
     </CardGroup>

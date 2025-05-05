@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Table, Button } from "react-bootstrap";
 
 const TurnosDoctorC = () => {
-  const [pacientes, setPacientes] = useState([
+  const turnosBase = [
     {
-      id: "Juan Perez" ,
+      id: "Juan Perez",
       nombre: "Juan Pérez",
       horarioAtencion: "10:00 AM",
     },
@@ -33,15 +33,30 @@ const TurnosDoctorC = () => {
       nombre: "Jose Suarez",
       horarioAtencion: "12:30 PM",
     },
-  ]);
+  ];
+
+  const [pacientes, setPacientes] = useState([]);
+
+  useEffect(() => {
+    // Leer turnos desde localStorage
+    const turnosGuardados = JSON.parse(localStorage.getItem("turnos")) || [];
+    // Combinar turnos base con los guardados
+    setPacientes([...turnosBase, ...turnosGuardados]);
+  }, []);
 
   const eliminarPaciente = (id) => {
-    setPacientes(pacientes.filter((paciente) => paciente.id !== id));
+    const nuevosPacientes = pacientes.filter((paciente) => paciente.id !== id);
+    setPacientes(nuevosPacientes);
+    // Guardar solo los turnos que estaban en localStorage (los que no son base)
+    const turnosBaseIds = turnosBase.map((t) => t.id);
+    const nuevosTurnosGuardados = nuevosPacientes.filter(
+      (p) => !turnosBaseIds.includes(p.id)
+    );
+    localStorage.setItem("turnos", JSON.stringify(nuevosTurnosGuardados));
   };
 
   const marcarAtendido = (id) => {
     alert(`El paciente ${id} fue marcado como atendido.`);
-
     eliminarPaciente(id);
   };
 
@@ -52,7 +67,6 @@ const TurnosDoctorC = () => {
         <thead>
           <tr>
             <th>Nombre</th>
-
             <th>Horario de Atención</th>
             <th>Acciones</th>
           </tr>

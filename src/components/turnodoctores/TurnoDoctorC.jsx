@@ -1,46 +1,59 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Table, Button } from "react-bootstrap";
 
 const TurnosDoctorC = () => {
-  const [pacientes, setPacientes] = useState([
+  const turnosBase = [
     {
-      id: 1,
+      id: "Juan Perez",
       nombre: "Juan Pérez",
       horarioAtencion: "10:00 AM",
     },
     {
-      id: 2,
+      id: "Ana Garcia",
       nombre: "Ana García",
       horarioAtencion: "10:30 AM",
     },
     {
-      id: 3,
+      id: "Emmanuel Ramo",
       nombre: "Emanuel Ramo",
       horarioAtencion: "11:00 AM",
     },
     {
-      id: 4,
+      id: "Esteban Jose",
       nombre: "Esteban Jose",
       horarioAtencion: "11:30 AM",
     },
     {
-      id: 5,
+      id: "Pablo Ramirez",
       nombre: "Pablo Ramirez",
       horarioAtencion: "12:00 PM",
     },
     {
-      id: 6,
+      id: "Jose Suarez",
       nombre: "Jose Suarez",
       horarioAtencion: "12:30 PM",
     },
-  ]);
+  ];
+
+  const [pacientes, setPacientes] = useState([]);
+
+  useEffect(() => {
+    const turnosGuardados = JSON.parse(localStorage.getItem("turnos")) || [];
+    setPacientes([...turnosBase, ...turnosGuardados]);
+  }, []);
 
   const eliminarPaciente = (id) => {
-    setPacientes(pacientes.filter((paciente) => paciente.id !== id));
+    const nuevosPacientes = pacientes.filter((paciente) => paciente.id !== id);
+    setPacientes(nuevosPacientes);
+    const turnosBaseIds = turnosBase.map((t) => t.id);
+    const nuevosTurnosGuardados = nuevosPacientes.filter(
+      (p) => !turnosBaseIds.includes(p.id)
+    );
+    localStorage.setItem("turnos", JSON.stringify(nuevosTurnosGuardados));
   };
 
   const marcarAtendido = (id) => {
-    alert(`El paciente con ID ${id} fue marcado como atendido.`);
+    alert(`El paciente ${id} fue marcado como atendido.`);
     eliminarPaciente(id);
   };
 
@@ -51,7 +64,6 @@ const TurnosDoctorC = () => {
         <thead>
           <tr>
             <th>Nombre</th>
-
             <th>Horario de Atención</th>
             <th>Acciones</th>
           </tr>

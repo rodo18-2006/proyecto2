@@ -1,7 +1,6 @@
-/* NotFound.css */
 
 .notfound-container {
-  height: calc(100vh - 56px - 56px); /* altura de la ventana menos navbar y footer */
+  height: calc(100vh - 56px - 56px); 
   background-color: #e0f7fa;
 }
 

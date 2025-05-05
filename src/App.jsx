@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+
 import Form from "./page/Form";
 import Inicio from "./page/Inicio";
 import Estudios from "./page/Estudios";
@@ -24,7 +25,6 @@ import TurnoDoctor from "./page/TurnoDoctor";
 
 const App = () => {
   return (
-    <div className="App">
       <Router>
         <Routes>
           <Route path="/" element={<Form />} />
@@ -49,7 +49,6 @@ const App = () => {
         </Routes>
         <ScrollToTopButton />
       </Router>
-    </div>
   );
 };
 

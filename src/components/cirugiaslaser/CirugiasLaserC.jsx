@@ -1,13 +1,11 @@
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import "./CirugiasLaser.css"; // Asegúrate de tener el archivo CSS para estilos personalizados
+import "./CirugiasLaser.css"; 
 
 const CirugiaLaserC = () => {
   return (
     <Container className="mt-5">
       <h2 className="text-center mb-4">Cirugía Láser</h2>
-
-      {/* Descripción general */}
       <Row className="mb-4">
         <Col md={12}>
           <p>
@@ -18,8 +16,6 @@ const CirugiaLaserC = () => {
           </p>
         </Col>
       </Row>
-
-      {/* Proceso de la cirugía */}
       <Row>
         <Col md={4}>
           <Card>
@@ -57,8 +53,6 @@ const CirugiaLaserC = () => {
           </Card>
         </Col>
       </Row>
-
-      {/* Testimonios */}
       <Row className="mt-5">
         <Col md={12} className="text-center">
           <h4>Testimonios de nuestros pacientes</h4>

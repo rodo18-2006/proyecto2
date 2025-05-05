@@ -39,7 +39,7 @@ const NavbardoctoresC= () => {
     <Navbar bg="primary" variant="dark" expand="lg">
       <Container>
         <img className="logo" src="./img/logo.png" alt="" />
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand as={Link} to="/doctores">
           Visionary | Doctor
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="doctor-navbar-nav" />

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Container, Table } from "react-bootstrap";
 
 const HorariosC = () => {
-  // Horarios generales de la clínica
   const [horarios] = useState([
     { id: 1, dia: "Lunes", hora: "08:00 – 12:00 / 14:00 – 18:00" },
     { id: 2, dia: "Martes", hora: "08:00 – 12:00 / 14:00 – 18:00" },

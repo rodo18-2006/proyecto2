@@ -16,9 +16,17 @@ const NuevoTurnoC = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   
+    const turnosGuardados = JSON.parse(localStorage.getItem("turnos")) || [];
+    const nuevoTurno = {
+      id: turnoData.paciente + turnoData.hora,
+      nombre: turnoData.paciente,
+      horarioAtencion: turnoData.hora,
+    };
+    turnosGuardados.push(nuevoTurno);
+    localStorage.setItem("turnos", JSON.stringify(turnosGuardados));
+
     alert("Turno registrado correctamente");
-    navigate("/doctor/turnos");
+    navigate("/turno-doctor");
   };
 
   return (

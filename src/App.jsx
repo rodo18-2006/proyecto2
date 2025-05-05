@@ -25,9 +25,6 @@ import TurnoDoctor from "./page/TurnoDoctor";
 
 const App = () => {
   return (
-    <div className="App">
-      {/* Envolvemos la aplicación con DoctorProvider */}
-
       <Router>
         <Routes>
           <Route path="/" element={<Form />} />
@@ -52,7 +49,6 @@ const App = () => {
         </Routes>
         <ScrollToTopButton />
       </Router>
-    </div>
   );
 };
 

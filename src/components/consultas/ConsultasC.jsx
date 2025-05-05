@@ -4,7 +4,6 @@ import { Send } from "lucide-react";
 import "./Consulta.css";
 
 const ConsultasC = () => {
-  // ESTADOS ADENTRO DE LA FUNCIÓN COMPONENTE
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
   const [telefono, setTelefono] = useState("");
@@ -20,7 +19,6 @@ const ConsultasC = () => {
     }
 
     alert("Consulta enviada correctamente.");
-    // Limpiar los campos
     setNombre("");
     setEmail("");
     setTelefono("");

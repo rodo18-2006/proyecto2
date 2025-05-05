@@ -7,8 +7,6 @@ const PerfilDoctorC = () => {
     especialidad: "",
     email: "",
   });
-
-  // Al montar el componente, recuperar los datos del doctor desde localStorage
   useEffect(() => {
     const storedDoctorInfo = JSON.parse(localStorage.getItem("doctorInfo"));
     if (storedDoctorInfo) {
@@ -24,7 +22,6 @@ const PerfilDoctorC = () => {
           
 
           <Form>
-            {/* Nombre */}
             <Form.Group className="mb-3">
               <Form.Label>Nombre</Form.Label>
               <Form.Control
@@ -34,8 +31,6 @@ const PerfilDoctorC = () => {
                 autoComplete="name"
               />
             </Form.Group>
-
-            {/* Especialidad */}
             <Form.Group className="mb-3">
               <Form.Label>Especialidad</Form.Label>
               <Form.Control
@@ -45,8 +40,6 @@ const PerfilDoctorC = () => {
                 autoComplete="organization-title"
               />
             </Form.Group>
-
-            {/* Email */}
             <Form.Group className="mb-3">
               <Form.Label>Email</Form.Label>
               <Form.Control
@@ -56,8 +49,6 @@ const PerfilDoctorC = () => {
                 autoComplete="email"
               />
             </Form.Group>
-
-            {/* Cambio de contraseña */}
             <Form.Group className="mb-3">
               <Form.Label>Cambiar Contraseña</Form.Label>
               <Form.Control
@@ -66,8 +57,6 @@ const PerfilDoctorC = () => {
                 autoComplete="new-password"
               />
             </Form.Group>
-
-            {/* Botón para guardar cambios */}
             <Button variant="primary" type="submit">
               Guardar Cambios
             </Button>

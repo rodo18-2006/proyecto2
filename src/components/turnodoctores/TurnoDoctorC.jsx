@@ -38,16 +38,13 @@ const TurnosDoctorC = () => {
   const [pacientes, setPacientes] = useState([]);
 
   useEffect(() => {
-    // Leer turnos desde localStorage
     const turnosGuardados = JSON.parse(localStorage.getItem("turnos")) || [];
-    // Combinar turnos base con los guardados
     setPacientes([...turnosBase, ...turnosGuardados]);
   }, []);
 
   const eliminarPaciente = (id) => {
     const nuevosPacientes = pacientes.filter((paciente) => paciente.id !== id);
     setPacientes(nuevosPacientes);
-    // Guardar solo los turnos que estaban en localStorage (los que no son base)
     const turnosBaseIds = turnosBase.map((t) => t.id);
     const nuevosTurnosGuardados = nuevosPacientes.filter(
       (p) => !turnosBaseIds.includes(p.id)

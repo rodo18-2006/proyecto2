@@ -55,15 +55,13 @@ const FormC = () => {
         alert("Usuario o contraseña incorrectos");
         return;
       }
-
-      // Guardar la información del doctor en localStorage
       const doctorData = {
         nombre: datos.doctorSeleccionado,
         foto: `path/to/${datos.doctorSeleccionado
           .replace(" ", "_")
           .toLowerCase()}.jpg`,
-        especialidad: "Especialidad del doctor", // Aquí puedes asignar la especialidad del doctor
-        email: "email@dominio.com", // Este sería el email del doctor
+        especialidad: "Especialidad del doctor",
+        email: "email@dominio.com",
       };
       localStorage.setItem("doctorInfo", JSON.stringify(doctorData));
 

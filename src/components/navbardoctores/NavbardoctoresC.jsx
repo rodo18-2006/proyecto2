@@ -36,9 +36,9 @@ const NavbardoctoresC= () => {
       </Container>
     </Navbar> */
 
-    <Navbar bg="primary"  variant="dark" expand="lg">
+    <Navbar bg="primary" variant="dark" expand="lg">
       <Container>
-        <img className='logo' src="./img/logo.png" alt="" />
+        <img className="logo" src="./img/logo.png" alt="" />
         <Navbar.Brand as={Link} to="/">
           Visionary | Doctor
         </Navbar.Brand>
@@ -48,7 +48,7 @@ const NavbardoctoresC= () => {
             <Nav.Link as={Link} to="/doctor/pacientes">
               Pacientes
             </Nav.Link>
-            <Nav.Link as={Link} to="/doctor/turnos">
+            <Nav.Link as={Link} to="/turno-doctor">
               Turnos
             </Nav.Link>
             <Nav.Link as={Link} to="/doctor/perfil">

@@ -18,6 +18,9 @@ import Contacto from "./page/Contacto";
 import Doctores from "./page/Doctores";
 import Horarios from "./page/Horarios";
 import AtencionalCliente from "./page/AtencionalCliente";
+import ScrollTop from "./page/ScrollTop";
+import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
+import TurnoDoctor from "./page/TurnoDoctor";
 
 const App = () => {
   return (
@@ -41,7 +44,10 @@ const App = () => {
           <Route path="/doctor" element={<Doctores />} />
           <Route path="/horarios" element={<Horarios />} />
           <Route path="/atencion-al-cliente" element={<AtencionalCliente />} />
+          <Route path="/scroll" element={<ScrollTop />} />
+          <Route path="/turno-doctor" element={<TurnoDoctor />} />
         </Routes>
+        <ScrollToTopButton />
       </Router>
     </div>
   );

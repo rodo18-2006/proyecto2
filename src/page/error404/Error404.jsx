@@ -12,7 +12,7 @@ const Error404 = () => (
       <Card.Text className="mb-4">
         ¡Uy! No encontramos la página que buscás.
       </Card.Text>
-      <Button as={Link} to="/inicio" variant="info" size="lg">
+      <Button as={Link} to="/" variant="info" size="lg">
         Volver al inicio
       </Button>
     </Card>

@@ -4,32 +4,32 @@ import { Table, Button } from "react-bootstrap";
 const TurnosDoctorC = () => {
   const [pacientes, setPacientes] = useState([
     {
-      id: 1,
+      id: "Juan Perez" ,
       nombre: "Juan Pérez",
       horarioAtencion: "10:00 AM",
     },
     {
-      id: 2,
+      id: "Ana Garcia",
       nombre: "Ana García",
       horarioAtencion: "10:30 AM",
     },
     {
-      id: 3,
+      id: "Emmanuel Ramo",
       nombre: "Emanuel Ramo",
       horarioAtencion: "11:00 AM",
     },
     {
-      id: 4,
+      id: "Esteban Jose",
       nombre: "Esteban Jose",
       horarioAtencion: "11:30 AM",
     },
     {
-      id: 5,
+      id: "Pablo Ramirez",
       nombre: "Pablo Ramirez",
       horarioAtencion: "12:00 PM",
     },
     {
-      id: 6,
+      id: "Jose Suarez",
       nombre: "Jose Suarez",
       horarioAtencion: "12:30 PM",
     },
@@ -40,7 +40,7 @@ const TurnosDoctorC = () => {
   };
 
   const marcarAtendido = (id) => {
-    alert(`El paciente con ID ${id} fue marcado como atendido.`);
+    alert(`El paciente  ${id} fue marcado como atendido.`);
     eliminarPaciente(id);
   };
 

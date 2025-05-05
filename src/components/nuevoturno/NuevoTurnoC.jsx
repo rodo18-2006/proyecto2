@@ -16,9 +16,27 @@ const NuevoTurnoC = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   
+
+    // 📦 Obtener los turnos existentes del localStorage
+    const turnosGuardados = JSON.parse(localStorage.getItem("turnos")) || [];
+
+    // 🆕 Crear el nuevo turno
+    const nuevoTurno = {
+      id: turnoData.paciente + turnoData.hora,
+      nombre: turnoData.paciente,
+      horarioAtencion: turnoData.hora,
+    };
+
+    // 📥 Agregar el nuevo turno a la lista
+    turnosGuardados.push(nuevoTurno);
+
+    // 📤 Guardar la lista actualizada en localStorage
+    localStorage.setItem("turnos", JSON.stringify(turnosGuardados));
+
     alert("Turno registrado correctamente");
-    navigate("/doctor/turnos");
+
+    // 🚀 Redirigir a la lista de turnos
+    navigate("/turno-doctor");
   };
 
   return (

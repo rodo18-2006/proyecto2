@@ -40,7 +40,8 @@ const TurnosDoctorC = () => {
   };
 
   const marcarAtendido = (id) => {
-    alert(`El paciente  ${id} fue marcado como atendido.`);
+    alert(`El paciente ${id} fue marcado como atendido.`);
+
     eliminarPaciente(id);
   };
 

@@ -70,12 +70,6 @@ const SobreNosotrosC = () => {
           <Card.Text>
             Diseñado por: Rodolfo Nicolás Juarez
           </Card.Text>
-          <Card.Text>
-            Desarrollado por: Rodolfo Nicolás Juarez
-          </Card.Text>
-          <Card.Text>
-            Página creada por:Rodolfo Nicolás Juarez
-          </Card.Text>
         </Card.Body>
       </Card>
     </Container>

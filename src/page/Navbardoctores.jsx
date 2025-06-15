@@ -9,7 +9,7 @@ const Navbardoctores = () => {
     <>
     <NavbardoctoresC />
     <IniciodoctorC />
-    <FooterC />
+
     </>
   )
 }

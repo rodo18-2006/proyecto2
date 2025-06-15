@@ -8,7 +8,7 @@ const Doctores = () => {
     <>
     <NavbarC />
     <DoctoresC />
-    <FooterC />
+    
     </>
   )
 }

@@ -9,7 +9,7 @@ const TurnoDoctor = () => {
     <>
       <NavbardoctoresC />
       <TurnosDoctorC />
-      <FooterC />
+    
     </>
   );
 };

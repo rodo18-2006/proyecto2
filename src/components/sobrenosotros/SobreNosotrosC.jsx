@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 import { Card, Container } from "react-bootstrap";
 
 const SobreNosotrosC = () => {
@@ -69,6 +69,103 @@ const SobreNosotrosC = () => {
         <Card.Body>
           <Card.Text>
             Diseñado por: Rodolfo Nicolás Juarez
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </Container>
+  );
+};
+
+export default SobreNosotrosC;
+ */
+
+import React from "react";
+import { Card, Container } from "react-bootstrap";
+
+
+
+const SobreNosotrosC = () => {
+  return (
+    <Container className="p-4">
+      <header className="mb-5 text-center">
+        <h3>Sobre Visionary</h3>
+        <p className="text-muted fst-italic">
+          Comprometidos con tu salud visual
+        </p>
+      </header>
+
+      <Card className="mb-4 shadow-sm">
+        <Card.Body>
+          <Card.Title>Bienvenidos a Visionary</Card.Title>
+          <Card.Text>
+            Somos una clínica oftalmológica dedicada a cuidar de tu salud
+            visual, combinando tecnología avanzada y un equipo médico
+            comprometido con tu bienestar. Nuestro espacio está diseñado para
+            brindarte comodidad, confianza y una atención personalizada desde el
+            primer momento en que nos visitas.
+          </Card.Text>
+        </Card.Body>
+      </Card>
+
+      <Card className="mb-4 shadow-sm">
+        <Card.Body>
+          <Card.Title>Nuestra Historia</Card.Title>
+          <Card.Text>
+            Visionary nació con el objetivo de brindar atención oftalmológica de
+            calidad, fusionando innovación tecnológica y un equipo médico de
+            excelencia. Desde nuestros inicios en 2022, trabajamos
+            incansablemente para preservar y mejorar la visión de cada uno de
+            nuestros pacientes, ofreciendo diagnósticos precisos y tratamientos
+            efectivos en un ambiente cálido y profesional.
+          </Card.Text>
+        </Card.Body>
+      </Card>
+
+      <Card className="mb-4 shadow-sm">
+        <Card.Body>
+          <Card.Title>Misión y Visión</Card.Title>
+          <Card.Text>
+            <strong>Misión:</strong> Proporcionar soluciones oftalmológicas
+            personalizadas, seguras y de alta calidad, mejorando la calidad de
+            vida de nuestros pacientes a través de un servicio humano y
+            profesional.
+            <br />
+            <br />
+            <strong>Visión:</strong> Convertirnos en un referente nacional en
+            atención médica visual, destacando por nuestra innovación constante,
+            calidad en el servicio y compromiso con la salud visual de la
+            comunidad.
+          </Card.Text>
+        </Card.Body>
+      </Card>
+
+      <Card className="mb-4 shadow-sm">
+        <Card.Body>
+          <Card.Title>¿Por qué elegir Visionary?</Card.Title>
+          <Card.Text>
+            Porque priorizamos tu salud visual con un equipo de profesionales
+            altamente capacitados, equipamiento de última generación y un
+            enfoque humano en cada consulta. Nos esforzamos en ofrecerte una
+            experiencia médica integral, desde un diagnóstico detallado hasta
+            tratamientos personalizados que se adaptan a tus necesidades.
+          </Card.Text>
+        </Card.Body>
+      </Card>
+
+      <Card
+        className="mx-auto mt-5"
+        style={{ maxWidth: "300px" }}
+        role="region"
+        aria-label="Perfil del diseñador"
+      >
+        <Card.Img
+          variant="top"
+          src="./img/img-card-perfil.png"
+          alt="Foto de perfil de Rodolfo Nicolás Juarez"
+        />
+        <Card.Body>
+          <Card.Text className="text-center">
+            Diseñado por: <br /> Rodolfo Nicolás Juarez
           </Card.Text>
         </Card.Body>
       </Card>

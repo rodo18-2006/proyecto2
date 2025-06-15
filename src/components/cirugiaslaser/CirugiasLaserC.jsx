@@ -84,7 +84,7 @@ const CirugiaLaserC = () => {
         </Col>
       </Row>
 
-      {/* Agendar consulta */}
+      
       <Row className="mt-5 text-center">
         <Col md={12}>
           <h3>Agenda tu consulta</h3>
@@ -98,7 +98,7 @@ const CirugiaLaserC = () => {
         </Col>
       </Row>
 
-      {/* FAQs */}
+      
       <Row className="mt-5">
         <Col md={12}>
           <h4>Preguntas Frecuentes</h4>
@@ -126,3 +126,5 @@ const CirugiaLaserC = () => {
 };
 
 export default CirugiaLaserC;
+
+

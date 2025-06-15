@@ -1,0 +1,27 @@
+.card-doctor {
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-doctor:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card-doctor-img {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-doctor .btn-primary {
+  border-radius: 25px;
+  font-weight: 600;
+  padding: 8px 20px;
+}
+
+.card-doctor .btn-primary:hover {
+  background-color: #004085;
+  border-color: #004085;
+}

@@ -1,0 +1,26 @@
+.horario-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.horario-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.horario-dia {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #002147;
+  margin-bottom: 8px;
+}
+
+.horario-hora {
+  color: #555;
+  font-size: 1rem;
+}

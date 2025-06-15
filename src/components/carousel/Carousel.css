@@ -3,4 +3,16 @@
 }
 .car{
   margin-top: 10px;
+} 
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  padding: 1rem;
+  max-width: 70%;
+  margin: auto;
+}
+
+.carousel-caption h3,
+.carousel-caption p {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }

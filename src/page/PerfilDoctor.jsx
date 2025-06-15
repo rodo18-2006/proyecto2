@@ -8,7 +8,7 @@ const PerfilDoctor = () => {
     <>
     <NavbardoctoresC />
     <PerfilDoctorC />
-    <FooterC />
+   
     </>
   )
 }

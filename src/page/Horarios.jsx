@@ -8,7 +8,7 @@ const Horarios = () => {
     <>
     <NavbarC />
     <HorariosC />
-    <FooterC />
+  
     </>
   )
 }

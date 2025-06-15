@@ -9,7 +9,7 @@
       <>
       <NavbarC />
       <ConsultasC />
-      <FooterC />
+    
       </>
     )
   }

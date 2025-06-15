@@ -93,6 +93,7 @@ const TurneroPacienteC = () => {
                 name="nombre"
                 value={nuevoTurno.nombre}
                 onChange={handleChange}
+                required
               />
             </Form.Group>
 
@@ -103,6 +104,7 @@ const TurneroPacienteC = () => {
                 name="documento"
                 value={nuevoTurno.documento}
                 onChange={handleChange}
+                required
               />
             </Form.Group>
 
@@ -113,6 +115,7 @@ const TurneroPacienteC = () => {
                 name="fecha"
                 value={nuevoTurno.fecha}
                 onChange={handleChange}
+                required
               />
             </Form.Group>
 
@@ -123,6 +126,7 @@ const TurneroPacienteC = () => {
                 name="telefono"
                 value={nuevoTurno.telefono}
                 onChange={handleChange}
+                required
               />
             </Form.Group>
 

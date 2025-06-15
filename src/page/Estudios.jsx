@@ -8,7 +8,7 @@ const Estudios = () => {
     <>
     <NavbarC />
     <EstudiosC />
-    <FooterC />
+    
     </>
   )
 }

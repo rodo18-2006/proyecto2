@@ -8,7 +8,7 @@ const TurnosPacientes = () => {
     <>
     <NavbarC />
     <TurneroPacienteC/>
-    <FooterC />
+   
     </>
   )
 }

@@ -8,7 +8,7 @@ const AtencionalCliente = () => {
     <>
     <NavbarC />
     <AtencionClienteC />
-    <FooterC />
+    
     </>
   )
 }

@@ -8,7 +8,7 @@ const SobreNosotros = () => {
     <>
     <NavbarC />
     <SobreNosotrosC />
-    <FooterC />
+  
     </>
   )
 }

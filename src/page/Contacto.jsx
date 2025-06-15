@@ -8,7 +8,7 @@ const Contacto = () => {
     <>
     <NavbarC />
     <ContactoC />
-    <FooterC />
+    
     </>
   )
 }

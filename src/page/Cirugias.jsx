@@ -10,7 +10,7 @@ const Cirugias = () => {
     <>
     <NavbarC/>
     <CirugiaLaserC/>
-    <FooterC />
+    
     </>
   )
 }

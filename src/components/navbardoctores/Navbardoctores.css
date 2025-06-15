@@ -1,4 +1,4 @@
-.nav-doc{
+/* .nav-doc{
   background-color: #e0f7fa;
 }
 
@@ -13,4 +13,90 @@
 
 .logo{
   width: 100px;
+} */
+
+.doctor-navbar {
+  background: linear-gradient(90deg, #3a8dde, #1e4ea8);
+  padding: 0.8rem 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 1050;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  margin-right: 1rem;
+  object-fit: contain;
+}
+
+.brand-text {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #eef6fc !important;
+  user-select: none;
+}
+
+.nav-links .nav-link {
+  color: #d3e3f6 !important;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-right: 1.2rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links .nav-link:hover,
+.nav-links .nav-link:focus {
+  color: #ffffff !important;
+}
+
+.nav-links .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.nav-links .nav-link:hover::after,
+.nav-links .nav-link:focus::after {
+  width: 100%;
+}
+
+.logout-btn {
+  border-radius: 25px;
+  border: 2px solid #eef6fc;
+  color: #eef6fc !important;
+  font-weight: 600;
+  padding: 0.3rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover,
+.logout-btn:focus {
+  background-color: #eef6fc;
+  color: #1e4ea8 !important;
+  border-color: #1e4ea8;
+  box-shadow: 0 0 8px #eef6fc;
+}
+
+@media (max-width: 991px) {
+  .logo {
+    width: 80px;
+  }
+  .brand-text {
+    font-size: 1.2rem;
+  }
+  .nav-links .nav-link {
+    font-size: 1rem;
+    margin-right: 0.8rem;
+  }
+  .logout-btn {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.8rem;
+  }
 }

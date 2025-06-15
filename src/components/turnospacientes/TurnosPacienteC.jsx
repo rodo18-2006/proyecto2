@@ -156,15 +156,23 @@ const TurneroPacienteC = () => {
     documento: "",
     fecha: "",
     telefono: "",
+    doctor: "",
+    motivoConsulta: "", // <-- agregado
   });
 
+  const doctores = [
+    { id: "juan-perez", nombre: "Dr Juan Perez" },
+    { id: "ana-garcia", nombre: "Dra Ana Garcia" },
+    { id: "pedro-lopez", nombre: "Dr Pedro Lopez" },
+    { id: "lucia-torres", nombre: "Dra Lucia Torres" },
+    { id: "ramiro-reynoso", nombre: "Dr Ramiro Reynoso" },
+  ];
 
   useEffect(() => {
     const turnosGuardados = JSON.parse(localStorage.getItem("turnos")) || [];
     setTurnos(turnosGuardados);
   }, []);
 
- 
   useEffect(() => {
     localStorage.setItem("turnos", JSON.stringify(turnos));
   }, [turnos]);
@@ -177,10 +185,20 @@ const TurneroPacienteC = () => {
     e.preventDefault();
     setValidated(true);
 
-    const { nombre, documento, fecha, telefono } = nuevoTurno;
+    const { nombre, documento, fecha, telefono, doctor, motivoConsulta } =
+      nuevoTurno;
 
-    if (!nombre || !documento || !fecha || !telefono) {
-      setMensaje("Por favor, completá todos los campos.");
+    if (
+      !nombre ||
+      !documento ||
+      !fecha ||
+      !telefono ||
+      !doctor ||
+      !motivoConsulta
+    ) {
+      setMensaje(
+        "Por favor, completá todos los campos, incluyendo el motivo de consulta."
+      );
       setTimeout(() => setMensaje(""), 3000);
       return;
     }
@@ -197,6 +215,7 @@ const TurneroPacienteC = () => {
       fecha,
       hora: "A confirmar",
       estado: "Pendiente",
+      doctor,
       ...nuevoTurno,
     };
 
@@ -208,6 +227,8 @@ const TurneroPacienteC = () => {
       documento: "",
       fecha: "",
       telefono: "",
+      doctor: "",
+      motivoConsulta: "", // <-- resetear
     });
     setValidated(false);
 
@@ -227,6 +248,8 @@ const TurneroPacienteC = () => {
             <th>Fecha</th>
             <th>Hora</th>
             <th>Estado</th>
+            <th>Doctor</th>
+            <th>Motivo Consulta</th> {/* <-- agregado */}
           </tr>
         </thead>
         <tbody>
@@ -236,6 +259,11 @@ const TurneroPacienteC = () => {
               <td>{turno.fecha}</td>
               <td>{turno.hora}</td>
               <td>{turno.estado}</td>
+              <td>
+                {doctores.find((d) => d.id === turno.doctor)?.nombre ||
+                  "No asignado"}
+              </td>
+              <td>{turno.motivoConsulta}</td> {/* <-- mostrar motivo */}
             </tr>
           ))}
         </tbody>
@@ -245,6 +273,44 @@ const TurneroPacienteC = () => {
       <Card>
         <Card.Body>
           <Form noValidate validated={validated} onSubmit={solicitarTurno}>
+            {/* ...otros campos igual */}
+
+            <Form.Group className="mb-2">
+              <Form.Label>Motivo de la Consulta</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={2}
+                name="motivoConsulta"
+                value={nuevoTurno.motivoConsulta}
+                onChange={handleChange}
+                isInvalid={validated && !nuevoTurno.motivoConsulta}
+                placeholder="Describe brevemente el motivo de tu consulta"
+              />
+              <Form.Control.Feedback type="invalid">
+                Por favor, ingresá el motivo de la consulta.
+              </Form.Control.Feedback>
+            </Form.Group>
+
+            <Form.Group className="mb-2">
+              <Form.Label>Doctor</Form.Label>
+              <Form.Select
+                name="doctor"
+                value={nuevoTurno.doctor}
+                onChange={handleChange}
+                isInvalid={validated && !nuevoTurno.doctor}
+              >
+                <option value="">Seleccione un doctor</option>
+                {doctores.map((doc) => (
+                  <option key={doc.id} value={doc.id}>
+                    {doc.nombre}
+                  </option>
+                ))}
+              </Form.Select>
+              <Form.Control.Feedback type="invalid">
+                Por favor, seleccioná un doctor.
+              </Form.Control.Feedback>
+            </Form.Group>
+
             <Form.Group className="mb-2">
               <Form.Label>Nombre Completo</Form.Label>
               <Form.Control

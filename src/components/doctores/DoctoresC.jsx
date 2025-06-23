@@ -53,7 +53,6 @@ import {
 import { Search } from "lucide-react";
 import "./Doctores.css";
 
-
 const DoctoresC = () => {
   const [doctores] = useState([
     {
@@ -105,8 +104,24 @@ const DoctoresC = () => {
       )
   );
 
+  
+
   const solicitarTurno = (doctor) => {
-    alert(`Has solicitado un turno con ${doctor.nombre}`);
+    const turnosGuardados = JSON.parse(localStorage.getItem("turnos")) || [];
+
+    const nuevoTurno = {
+      id: Date.now(),
+      doctor: doctor.nombre,
+      paciente: "Paciente a definir",
+      fecha: "A confirmar",
+      hora: "A confirmar",
+      estado: "Pendiente",
+    };
+
+    turnosGuardados.push(nuevoTurno);
+    localStorage.setItem("turnos", JSON.stringify(turnosGuardados));
+
+    alert(`Turno con ${doctor.nombre} registrado correctamente`);
   };
 
   return (

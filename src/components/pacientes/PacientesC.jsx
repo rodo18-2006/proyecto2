@@ -76,12 +76,12 @@ const PacientesC = () => {
 
 export default PacientesC;
  */
-
 import React, { useState, useEffect } from "react";
-import { Table, Button, Badge, Form } from "react-bootstrap";
+import { Form, Table, Badge, Button } from "react-bootstrap";
+
 
 const PacientesC = () => {
-  const doctorLogueado = "juan-perez";
+  const doctorLogueado = localStorage.getItem("doctorLogueado");
 
   const [pacientes, setPacientes] = useState([]);
   const [busqueda, setBusqueda] = useState("");
@@ -145,7 +145,7 @@ const PacientesC = () => {
       );
       setPacientes(turnosDelDoctor);
     }
-  }, []);
+  }, [doctorLogueado]);
 
   const eliminarPaciente = (id) => {
     if (window.confirm("¿Eliminar paciente?")) {
@@ -181,9 +181,21 @@ const PacientesC = () => {
     p.nombre.toLowerCase().includes(busqueda.toLowerCase())
   );
 
+  const cargarTurnos = () => {
+    const turnosGuardados = JSON.parse(localStorage.getItem("turnos")) || [];
+    const turnosDelDoctor = turnosGuardados.filter(
+      (turno) => turno.doctor === doctorLogueado
+    );
+    setPacientes(turnosDelDoctor);
+  };
+
   return (
     <div className="container mt-4">
       <h4>Lista de Pacientes - Doctor: {doctorLogueado}</h4>
+
+      <Button variant="primary" className="mb-3" onClick={cargarTurnos}>
+        Actualizar Turnos
+      </Button>
 
       <Form.Control
         type="text"

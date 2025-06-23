@@ -155,9 +155,10 @@ const TurneroPacienteC = () => {
     nombre: "",
     documento: "",
     fecha: "",
+    hora: "",
     telefono: "",
     doctor: "",
-    motivoConsulta: "", // <-- agregado
+    motivoConsulta: "",
   });
 
   const doctores = [
@@ -185,27 +186,44 @@ const TurneroPacienteC = () => {
     e.preventDefault();
     setValidated(true);
 
-    const { nombre, documento, fecha, telefono, doctor, motivoConsulta } =
+    const { nombre, documento, fecha, hora, telefono, doctor, motivoConsulta } =
       nuevoTurno;
 
     if (
       !nombre ||
       !documento ||
       !fecha ||
+      !hora ||
       !telefono ||
       !doctor ||
       !motivoConsulta
     ) {
-      setMensaje(
-        "Por favor, completá todos los campos, incluyendo el motivo de consulta."
-      );
+      setMensaje("Por favor, completá todos los campos.");
       setTimeout(() => setMensaje(""), 3000);
       return;
     }
 
     const hoy = new Date().toISOString().split("T")[0];
+    const ahora = new Date().toTimeString().split(":").slice(0, 2).join(":");
+
     if (fecha < hoy) {
       setMensaje("La fecha no puede ser anterior a hoy.");
+      setTimeout(() => setMensaje(""), 3000);
+      return;
+    }
+
+    if (fecha === hoy && hora < ahora) {
+      setMensaje("El horario no puede ser anterior a la hora actual.");
+      setTimeout(() => setMensaje(""), 3000);
+      return;
+    }
+
+    const turnoExistente = turnos.find(
+      (t) => t.doctor === doctor && t.fecha === fecha && t.hora === hora
+    );
+
+    if (turnoExistente) {
+      setMensaje("Ese horario ya está ocupado para el doctor seleccionado.");
       setTimeout(() => setMensaje(""), 3000);
       return;
     }
@@ -213,22 +231,24 @@ const TurneroPacienteC = () => {
     const turnoAgendado = {
       id: Date.now(),
       fecha,
-      hora: "A confirmar",
+      hora,
       estado: "Pendiente",
       doctor,
       ...nuevoTurno,
     };
 
-    setTurnos([...turnos, turnoAgendado]);
+    const nuevosTurnos = [...turnos, turnoAgendado];
+    setTurnos(nuevosTurnos);
 
     setMensaje("Turno solicitado correctamente.");
     setNuevoTurno({
       nombre: "",
       documento: "",
       fecha: "",
+      hora: "",
       telefono: "",
       doctor: "",
-      motivoConsulta: "", // <-- resetear
+      motivoConsulta: "",
     });
     setValidated(false);
 
@@ -249,7 +269,7 @@ const TurneroPacienteC = () => {
             <th>Hora</th>
             <th>Estado</th>
             <th>Doctor</th>
-            <th>Motivo Consulta</th> {/* <-- agregado */}
+            <th>Motivo Consulta</th>
           </tr>
         </thead>
         <tbody>
@@ -263,7 +283,7 @@ const TurneroPacienteC = () => {
                 {doctores.find((d) => d.id === turno.doctor)?.nombre ||
                   "No asignado"}
               </td>
-              <td>{turno.motivoConsulta}</td> {/* <-- mostrar motivo */}
+              <td>{turno.motivoConsulta}</td>
             </tr>
           ))}
         </tbody>
@@ -273,8 +293,6 @@ const TurneroPacienteC = () => {
       <Card>
         <Card.Body>
           <Form noValidate validated={validated} onSubmit={solicitarTurno}>
-            {/* ...otros campos igual */}
-
             <Form.Group className="mb-2">
               <Form.Label>Motivo de la Consulta</Form.Label>
               <Form.Control
@@ -284,7 +302,6 @@ const TurneroPacienteC = () => {
                 value={nuevoTurno.motivoConsulta}
                 onChange={handleChange}
                 isInvalid={validated && !nuevoTurno.motivoConsulta}
-                placeholder="Describe brevemente el motivo de tu consulta"
               />
               <Form.Control.Feedback type="invalid">
                 Por favor, ingresá el motivo de la consulta.
@@ -354,6 +371,20 @@ const TurneroPacienteC = () => {
               />
               <Form.Control.Feedback type="invalid">
                 Ingresá una fecha válida a partir de hoy.
+              </Form.Control.Feedback>
+            </Form.Group>
+
+            <Form.Group className="mb-2">
+              <Form.Label>Horario</Form.Label>
+              <Form.Control
+                type="time"
+                name="hora"
+                value={nuevoTurno.hora}
+                onChange={handleChange}
+                isInvalid={validated && !nuevoTurno.hora}
+              />
+              <Form.Control.Feedback type="invalid">
+                Por favor, seleccioná un horario.
               </Form.Control.Feedback>
             </Form.Group>
 

@@ -2,20 +2,20 @@ import React from "react";
 import { Card, ListGroup } from "react-bootstrap";
 
 const Notificaciones = ({ notificaciones }) => {
-  // Map de tipo de notificación a emoji y color
+  
   const iconos = {
     registro: "📝",
     recordatorio: "⏰",
     alerta: "⚠️",
   };
 
-  // Función para elegir emoji según texto o tipo (ajustá según tus datos)
+
   const obtenerIcono = (texto) => {
     if (texto.toLowerCase().includes("registro")) return iconos.registro;
     if (texto.toLowerCase().includes("recordatorio"))
       return iconos.recordatorio;
     if (texto.toLowerCase().includes("alerta")) return iconos.alerta;
-    return "🔔"; // default campanita
+    return "🔔";
   };
 
   return (
